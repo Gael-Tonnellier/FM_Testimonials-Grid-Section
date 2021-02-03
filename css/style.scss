@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+/* Variable box , couleur et taille*/
+
+$gris: hsl(0, 0%, 81%);
+$darkblue: hsl(210, 46%, 95%);
+$graduate:0.5;
+$review:0.7;
+@mixin box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 6px 6px 20px  rgba(0, 0, 0, 0.288);
+    margin: 12px;
+    justify-content: left;
+    overflow: auto;
+    text-align: left;
+}
+
+/*Toute la page*/
+
+html{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background-color:$darkblue;
+    width: 1440px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+/* Mise en page Box */
+
+.content_daniel{
+  
+  @include box;
+  width: 600px;
+  color: $darkblue;
+  background: url('../images/bg-pattern-quotation.svg') no-repeat
+  hsl(263, 55%, 52%) top right 20vh;
+  
+}
+.content_jonathan{
+    background-color: hsl(217, 19%, 35%);
+    @include box;
+    width: 250px;
+    color: $darkblue;
+}
+.content_jeanette{
+    background-color: hsl(0, 0%, 100%);
+    @include box;
+    width: 250px;
+    color: hsl(217, 19%, 35%);
+}
+.content_patrick{
+    background-color: hsl(219, 29%, 14%);
+    @include box;
+    width: 600px;
+    color: $darkblue;
+}
+.content_kira{
+    background-color: hsl(0, 0%, 100%);
+    @include box;
+    width: 250px;
+    margin-top: 12px;
+    color: hsl(217, 19%, 35%);
+    height: 616px;
+}
+
+/* Photo et image */
+
+.entete {
+    padding-left: 30px;
+    padding-top: 10px;
+    & img{
+        float: left;
+        border: solid 2px;
+        border-radius: 50%;
+        width: 30px;
+    }
+    & #kira{
+        border-color: rgb(255, 255, 255);
+    }
+    & #jonathan{
+        border-color: grey;
+    }
+    & #daniel {
+        border-color: hsl(263, 81%, 71%);
+    }
+    & #jeanette {
+        border-color: hsl(0, 0%, 100%);
+    }
+    & #patrick {
+        border-color: hsl(263, 55%, 52%);
+    }
+}
+
+/* Text*/ 
+h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 50px;
+    padding-top: 3px;
+    
+    
+}
+h2 {
+    opacity: 0.5;
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    padding-left: 50px;
+    
+}
+h3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+p {
+    opacity: 0.7;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    font-weight: 500;
+    line-height: 19px;
+    word-spacing: 0.4px;
+}
+
+/*Flex content_all et gauche droite*/
+
+.content_all {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin-left: 170px;
+    margin-top: 100px;
+
+}
+
+.content_left{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (max-width: 375px) {
+    html{
+        width: 375px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    body{
+        width: 375px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .content_all{
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        margin: auto;
+    }
+    .content_left{
+        display: flex;
+        flex-direction: column;
+    }
+
+   /* Tailles box personne*/
+
+   .content_daniel{
+  
+    @include box;
+    width:fit-content;
+    color: $darkblue;
+    background: url('../images/bg-pattern-quotation.svg') no-repeat
+    hsl(263, 55%, 52%) top right 5vh;
+    
+  }
+  .content_jonathan{
+      background-color: hsl(217, 19%, 35%);
+      @include box;
+      width:fit-content;
+      color: $darkblue;
+  }
+  .content_jeanette{
+      background-color: hsl(0, 0%, 100%);
+      @include box;
+      width:fit-content;
+      color: hsl(217, 19%, 35%);
+  }
+  .content_patrick{
+      background-color: hsl(219, 29%, 14%);
+      @include box;
+      width:fit-content;
+      color: $darkblue;
+  }
+  .content_kira{
+      background-color: hsl(0, 0%, 100%);
+      @include box;
+      width:fit-content;
+      margin-top: 12px;
+      color: hsl(217, 19%, 35%);
+      height: fit-content;
+  }
+}
