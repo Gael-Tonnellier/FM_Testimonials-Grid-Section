@@ -24,13 +24,16 @@ html{
     font-size: 13px;
     font-weight: 500;
     background-color:$darkblue;
+    width: 1440px;
+    margin-left: 10%;
+    margin-top: 5%;
 }
 /* Mise en page Box */
 
 .content_daniel{
   
   @include box;
-  width: 750px;
+  width: 600px;
   color: $darkblue;
   background: url('../images/bg-pattern-quotation.svg') no-repeat
   hsl(263, 55%, 52%) top right 20vh;
@@ -39,33 +42,35 @@ html{
 .content_jonathan{
     background-color: hsl(217, 19%, 35%);
     @include box;
-    width: 300px;
+    width: 250px;
     color: $darkblue;
 }
 .content_jeanette{
     background-color: hsl(0, 0%, 100%);
     @include box;
-    width: 300px;
+    width: 250px;
     color: hsl(217, 19%, 35%);
 }
 .content_patrick{
     background-color: hsl(219, 29%, 14%);
     @include box;
-    width: 750px;
+    width: 600px;
     color: $darkblue;
 }
 .content_kira{
     background-color: hsl(0, 0%, 100%);
     @include box;
-    width: 300px;
+    width: 250px;
     margin-top: 12px;
     color: hsl(217, 19%, 35%);
+    height: 616px;
 }
 
 /* Photo et image */
 
 .entete {
     padding-left: 30px;
+    padding-top: 10px;
     & img{
         float: left;
         border: solid 2px;
@@ -85,7 +90,7 @@ html{
         border-color: hsl(0, 0%, 100%);
     }
     & #patrick {
-        border-color:hsl(263, 55%, 52%);
+        border-color: hsl(263, 55%, 52%);
     }
 }
 
@@ -94,12 +99,18 @@ h1 {
     margin: 0;
     font-weight: 500;
     font-size: 13px;
+    padding-left: 50px;
+    padding-top: 3px;
+    
+    
 }
 h2 {
     opacity: 0.5;
     margin: 0;
     font-size: 10px;
     font-weight: 500;
+    padding-left: 50px;
+    
 }
 h3 {
     padding-left: 30px;
@@ -113,28 +124,26 @@ p {
     padding-right: 30px;
     padding-bottom: 30px;
     font-weight: 500;
+    line-height: 19px;
+    word-spacing: 0.4px;
 }
 
 /*Flex content_all et gauche droite*/
 
 .content_all {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    margin: 10% 5% 10% 5%;
+    max-width: 1200px;
+    margin-left: 170px;
+    margin-top: 100px;
+
 }
 
 .content_left{
     display: flex;
     flex-wrap: wrap;
-    max-width: 1100px;
+    max-width: 900px;
 }
-
-.content_right{
-    
-}
-
-
-
 
 /* Footer */
 .attribution {
@@ -144,4 +153,68 @@ p {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (max-width: 375px) {
+    html{
+        width: 375px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    body{
+        width: 375px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .content_all{
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        margin: auto;
+    }
+    .content_left{
+        display: flex;
+        flex-direction: column;
+    }
+
+   /* Tailles box personne*/
+
+   .content_daniel{
+  
+    @include box;
+    width:fit-content;
+    color: $darkblue;
+    background: url('../images/bg-pattern-quotation.svg') no-repeat
+    hsl(263, 55%, 52%) top right 5vh;
+    
+  }
+  .content_jonathan{
+      background-color: hsl(217, 19%, 35%);
+      @include box;
+      width:fit-content;
+      color: $darkblue;
+  }
+  .content_jeanette{
+      background-color: hsl(0, 0%, 100%);
+      @include box;
+      width:fit-content;
+      color: hsl(217, 19%, 35%);
+  }
+  .content_patrick{
+      background-color: hsl(219, 29%, 14%);
+      @include box;
+      width:fit-content;
+      color: $darkblue;
+  }
+  .content_kira{
+      background-color: hsl(0, 0%, 100%);
+      @include box;
+      width:fit-content;
+      margin-top: 12px;
+      color: hsl(217, 19%, 35%);
+      height: fit-content;
+  }
 }
